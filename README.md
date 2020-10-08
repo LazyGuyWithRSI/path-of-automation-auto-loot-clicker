@@ -3,7 +3,7 @@
 
 Tired of clicking on those endless stacks of currency, vendor items, divination cards and more? Now you don't have to! This script will click on a piece of loot for you whenever you hit the hotkey!
 
--- youtube video goes here -- 
+[Video of the auto-looter in action](http://www.youtube.com)
 
 
 ### 
@@ -12,7 +12,7 @@ Tired of clicking on those endless stacks of currency, vendor items, divination 
 
    *This is WINDOWS ONLY currently*
 
-- download the latest release from the releases page
+- download the [latest release from the releases page](https://github.com/LazyGuyWithRSI/path-of-automation-auto-loot-clicker/releases/tag/0.1.0)
 - load up the provided loot filter ( or make your own, see lootfilter section below)
 - run clicker.exe
 - *NOTE: currently the game needs to be fullscreen or borderless window, as long as the game mostly fills your screen it will work*
