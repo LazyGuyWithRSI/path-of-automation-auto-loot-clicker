@@ -1,5 +1,5 @@
 
-# Path of Automation: Loot Clicker!
+# Path of Automation: Loot Clicker
 
 Tired of clicking on those endless stacks of currency, vendor items, divination cards and more? Now you don't have to! This script will click on a piece of loot for you whenever you hit the hotkey!
 
