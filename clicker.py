@@ -9,7 +9,12 @@ import cv2 as cv
 import win32api
 
 # change HOTKEY to whatever key you want (ex. 'a', 'f2') even modifiers (ex. 'ctrl+d')
-HOTKEY = 'space'
+HOTKEY = 'space' #default: 'space'
+
+# change LOOT_COLOR to whatever color the loot you want to pick up is
+LOOT_COLOR = (255, 0, 239) #default: (255, 0, 239)
+
+COLOR_DEVIATION = 10
 
 offsetX = 1050
 offsetY = 540
@@ -74,12 +79,24 @@ while True:
          # resize image
          frame = cv.resize(img, dim, interpolation = cv.INTER_AREA)
          frame = cv.cvtColor(frame, cv.COLOR_RGB2BGR)
-         channels = cv.split(frame)
-         cv.subtract(channels[2], channels[1], channels[2])
-         frameGray = channels[2]#cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-         #cv.imshow("pre thresh", frameGray)
+         #channels = cv.split(frame)
+         #cv.subtract(channels[2], channels[1], channels[2])
+         #frameGray = channels[2]#cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
-         ret, thresh = cv.threshold(frameGray, 200, 255, 0)
+         #ret, thresh = cv.threshold(frameGray, 200, 255, 0)
+         lowerBound = (
+            max(0, min(255,LOOT_COLOR[2] - COLOR_DEVIATION)),
+            max(0, min(255,LOOT_COLOR[1] - COLOR_DEVIATION)),
+            max(0, min(255,LOOT_COLOR[0] - COLOR_DEVIATION)))
+         upperBound = (
+            max(0, min(255,LOOT_COLOR[2] + COLOR_DEVIATION)),
+            max(0, min(255,LOOT_COLOR[1] + COLOR_DEVIATION)),
+            max(0, min(255,LOOT_COLOR[0] + COLOR_DEVIATION)))
+         frameGray = cv.inRange(frame, lowerBound, upperBound)
+         #cv.imshow("pre thresh", range)
+         #frameGrey = cv.cvtColor(range, cv.COLOR_BGR2GRAY)
+         #cv.imshow("pre thresh", frameGray)
+         ret, thresh = cv.threshold(frameGray, 100, 255, 0)
          #thresh = cv.erode(thresh, None, iterations=1)
          thresh = cv.dilate(thresh, None, iterations=1)
          #cv.imshow("test", thresh)
@@ -94,7 +111,7 @@ while True:
 
             #cv.drawContours(frame, [contour], 0, (0, 50, 200), 2)
             approx = cv.approxPolyDP(contour, 0.01*cv.arcLength(contour, True), True)
-            if len(approx) >= 4 and len(approx) <= 40:
+            if len(approx) >= 4 and len(approx) <= 50:
                cv.drawContours(frame, [contour], 0, (0, 50, 200), 2)
                foundThingToClick = True
 
@@ -122,6 +139,6 @@ while True:
 
       keyDown = False
       #cv.imshow("frame", frame)
-      cv.waitKey(10)
+      #cv.waitKey(10)
 
    time.sleep(0.03)
