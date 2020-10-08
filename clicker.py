@@ -8,6 +8,7 @@ import numpy as np
 import cv2 as cv
 import win32api
 import keyboard
+from configparser import ConfigParser
 
 # TODO HOTKEY not implemented yet
 # change HOTKEY to whatever key you want (ex. 'a', 'f2') even modifiers (ex. 'ctrl+d')
@@ -32,13 +33,24 @@ keyDown = False
 keyState = 0
 
 def init(): # global gross, but I am writing this at 11pm so I'll fix it later
-   global offsetX, offsetY, searchWidth, searchHeight, searchScaleWidth, searchScaleHeight
+   global offsetX, offsetY, searchWidth, searchHeight, searchScaleWidth, searchScaleHeight, HOTKEY, LOOT_COLOR
 
    res = ctypes.windll.user32.GetSystemMetrics(0), ctypes.windll.user32.GetSystemMetrics(1)
    searchWidth = res[0] * searchScaleWidth
    searchHeight = res[1] * searchScaleHeight
    offsetX = (res[0] / 2) - (searchWidth / 2)
    offsetY = (res[1] / 2) - (searchHeight / 2)
+
+   # load values from config.ini if there are any
+   parser = ConfigParser()
+   parser.read("config.ini")
+   if (parser.has_option('config', 'hotkey')):
+      HOTKEY = parser.get('config', 'hotkey')
+      print("loading HOTKEY from config.ini")
+   if (parser.has_option('config', 'loot_color')):
+      LOOT_COLOR = eval(parser.get('config', 'loot_color'))
+      print("loading LOOT_COLOR from config.ini")
+   print("-- init finished --\n\n")
 
 
 def leftClick(sleep=0.005):
@@ -128,8 +140,6 @@ def grabLoot():
    #cv.imshow("frame", frame)
    #cv.waitKey(10)
 
-init()
-
 print(
    "\nPath of Automation:\n" + 
    "     _         _              _                _      ____ _ _      _             \n" +
@@ -137,10 +147,12 @@ print(
    "   / _ \| | | | __/ _ \ _____| |   / _ \ / _ \| __| | |   | | |/ __| |/ / _ \ '__|\n" +
    "  / ___ \ |_| | || (_) |_____| |__| (_) | (_) | |_  | |___| | | (__|   <  __/ |   \n" +
    " /_/   \_\__,_|\__\___/      |_____\___/ \___/ \__|  \____|_|_|\___|_|\_\___|_|   \n\n" +
-   "by LazyGuyWithRSI\n\n" +
-   "Ready to grab some loot!"
+   "by LazyGuyWithRSI\n\n"
 )
 
+init()
+
+print("Ready to grab some loot!\n")
 
 while True:
    # track for key down
