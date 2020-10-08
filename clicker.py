@@ -137,8 +137,8 @@ def grabLoot():
       leftClick()
       ctypes.windll.user32.SetCursorPos(int(last[0]), int(last[1]))
 
-   cv.imshow("frame", frame)
-   cv.waitKey(10)
+   #cv.imshow("frame", frame)
+   #cv.waitKey(10)
 
 print(
    "\nPath of Automation:\n" + 
