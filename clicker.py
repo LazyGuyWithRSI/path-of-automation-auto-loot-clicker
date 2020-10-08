@@ -46,10 +46,10 @@ def init(): # global gross, but I am writing this at 11pm so I'll fix it later
    parser.read("config.ini")
    if (parser.has_option('config', 'hotkey')):
       HOTKEY = parser.get('config', 'hotkey')
-      print("loading HOTKEY from config.ini")
+      print("loading HOTKEY=" + str(HOTKEY) + " from config.ini")
    if (parser.has_option('config', 'loot_color')):
       LOOT_COLOR = eval(parser.get('config', 'loot_color'))
-      print("loading LOOT_COLOR from config.ini")
+      print("loading LOOT_COLOR=" + str(LOOT_COLOR)+ " from config.ini")
    print("-- init finished --\n\n")
 
 
@@ -137,8 +137,8 @@ def grabLoot():
       leftClick()
       ctypes.windll.user32.SetCursorPos(int(last[0]), int(last[1]))
 
-   #cv.imshow("frame", frame)
-   #cv.waitKey(10)
+   cv.imshow("frame", frame)
+   cv.waitKey(10)
 
 print(
    "\nPath of Automation:\n" + 
@@ -154,24 +154,6 @@ init()
 
 print("Ready to grab some loot!\n")
 
+keyboard.add_hotkey(HOTKEY, grabLoot)
 while True:
-   # track for key down
-   code = win32api.GetKeyState(32)
-   #print("cpode: " + str(code) + ", keystate: " + str(keyState)) 
-
-   if code == 0 or code == 1:
-      keyState = 0
-
-   if (code == -127 or code == -128) and keyState == 0:
-      #print("new keydown, cpode: " + str(code) + ", keystate: " + str(keyState))
-      keyDown = True
-      keyState = 1
-
-   if keyDown:
-      grabLoot()
-
-      keyDown = False
-      #cv.imshow("frame", frame)
-      #cv.waitKey(10)
-
-   time.sleep(0.03)
+   time.sleep(0.03) #keep it alive
