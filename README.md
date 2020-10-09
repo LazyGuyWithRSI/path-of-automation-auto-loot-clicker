@@ -33,7 +33,9 @@ Tired of clicking on those endless stacks of currency, vendor items, divination 
    - yes. If you are concerned, just read the source.
 
    ### Does this violate Path of Exile's Terms of Service?
-   - Only GGG knows. All I know is that marcos are allowed if they result in one action, which is true for this script. So most likely, yes. If anything, it will show if GGG is ever willing to implement an auto-loot feature.
+   - Only GGG knows. All I know is that marcos are allowed if they result in one action, which is true for this script. So most likely, no it does not violate the terms of service. If anything, it will show if GGG is ever willing to implement an auto-loot feature.
+
+   ### **I am not responsible if use of this script results in action from GGG**
 
 ---
 ### The Loot Filter
@@ -54,3 +56,5 @@ that color.
 - pyinstaller - for distribution
 
 ## Contributing
+
+I haven't thought this far. Will update with guidelines in the future.
