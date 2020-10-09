@@ -11,12 +11,16 @@ Tired of clicking on those endless stacks of currency, vendor items, divination 
 ## Getting Started
 
    *This is WINDOWS ONLY currently*
+   
+1. download the [latest release from the releases page](https://github.com/LazyGuyWithRSI/path-of-automation-auto-loot-clicker/releases)
+2. load up the provided loot filter ( or make your own, see lootfilter section below)
+3. run poe-auto-loot.exe
 
-- download the [latest release from the releases page](https://github.com/LazyGuyWithRSI/path-of-automation-auto-loot-clicker/releases)
-- load up the provided loot filter ( or make your own, see lootfilter section below)
-- run clicker.exe
-- *NOTE: currently the game needs to be fullscreen or borderless window, as long as the game mostly fills your screen it will work*
-- press the hotkey (default 'space bar') when loot drops to grab it!
+ *NOTE: currently the game needs to be fullscreen or borderless window, as long as the game mostly fills your screen it will work*
+ 
+4. press the hotkey (default 'space bar') when loot drops to grab it!
+
+**Important**: The script uses your mouse, so you cannot be pressing a mouse button when you press the hotkey. If you are clicking, the script can't click for you!
 
 ---
 ## FAQ
@@ -45,4 +49,8 @@ pick up are all colored the same, and with a stand out color. Then, edit the .in
 that color.
 
 ---
+
+## Built With
+- pyinstaller - for distribution
+
 ## Contributing
