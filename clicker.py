@@ -64,7 +64,6 @@ def extrapolate(xVals, yVals, lagCompensation = 1.0):
    return slope
 
 def grabLoot():
-   print("nabbin' a loot")
 
    cXList = []
    cYList = []
@@ -129,6 +128,7 @@ def grabLoot():
       leftClick()
       ctypes.windll.user32.SetCursorPos(int(last[0]), int(last[1]))
 
+   print("nabbin' a loot")
    #cv.imshow("frame", frame)
    #cv.waitKey(10)
 
