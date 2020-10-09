@@ -14,6 +14,8 @@ Tired of clicking on those endless stacks of currency, vendor items, divination 
    
 1. download the [latest release from the releases page](https://github.com/LazyGuyWithRSI/path-of-automation-auto-loot-clicker/releases)
 2. load up the provided loot filter ( or make your own, see lootfilter section below)
+
+   [tutorial on installing a loot filter in PoE](https://filterblast.xyz/how-to-install-and-use-poe-item-filter.html)
 3. run poe-auto-loot.exe
 
  *NOTE: currently the game needs to be fullscreen or borderless window, as long as the game mostly fills your screen it will work*
