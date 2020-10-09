@@ -12,7 +12,7 @@ Tired of clicking on those endless stacks of currency, vendor items, divination 
 
    *This is WINDOWS ONLY currently*
    
-1. download the [latest release from the releases page](https://github.com/LazyGuyWithRSI/path-of-automation-auto-loot-clicker/releases)
+1. download the [latest release](https://github.com/LazyGuyWithRSI/path-of-automation-auto-loot-clicker/releases)
 2. load up the provided loot filter ( or make your own, see lootfilter section below)
 3. run poe-auto-loot.exe
 
@@ -47,7 +47,7 @@ I have provided my own custom loot filter that turns many items to a stand out c
 ### -- Advanced users --
 
    It is possible to use your own filter, but you need to make sure the things you want to
-pick up are all colored the same, and with a stand out color. Then, edit the .ini to use
+pick up are all colored the same, and that the color stands out. Then, edit the .ini to use
 that color.
 
 ---
