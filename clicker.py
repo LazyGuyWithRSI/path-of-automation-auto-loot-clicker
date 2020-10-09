@@ -19,9 +19,9 @@ LOOT_COLOR = (255, 0, 239) #default: (255, 0, 239)
 
 COLOR_DEVIATION = 10
 
-searchScaleWidth = 0.55
-searchScaleHeight = 0.70
-
+searchScaleWidth = 0.8
+searchScaleHeight = 0.8
+searchOffset = 0.02
 
 offsetX = 1050
 offsetY = 540
@@ -39,7 +39,7 @@ def init(): # global gross, but I am writing this at 11pm so I'll fix it later
    searchWidth = res[0] * searchScaleWidth
    searchHeight = res[1] * searchScaleHeight
    offsetX = (res[0] / 2) - (searchWidth / 2)
-   offsetY = (res[1] / 2) - (searchHeight / 2)
+   offsetY = (res[1] / 2) - (searchHeight / 2) - (res[1] * searchOffset)
 
    # load values from config.ini if there are any
    parser = ConfigParser()
@@ -79,11 +79,6 @@ def grabLoot():
       # resize image
       frame = cv.resize(img, dim, interpolation = cv.INTER_AREA)
       frame = cv.cvtColor(frame, cv.COLOR_RGB2BGR)
-      #channels = cv.split(frame)
-      #cv.subtract(channels[2], channels[1], channels[2])
-      #frameGray = channels[2]#cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-
-      #ret, thresh = cv.threshold(frameGray, 200, 255, 0)
       lowerBound = (
          max(0, min(255,LOOT_COLOR[2] - COLOR_DEVIATION)),
          max(0, min(255,LOOT_COLOR[1] - COLOR_DEVIATION)),
@@ -93,8 +88,6 @@ def grabLoot():
          max(0, min(255,LOOT_COLOR[1] + COLOR_DEVIATION)),
          max(0, min(255,LOOT_COLOR[0] + COLOR_DEVIATION)))
       frameGray = cv.inRange(frame, lowerBound, upperBound)
-      #cv.imshow("pre thresh", range)
-      #frameGrey = cv.cvtColor(range, cv.COLOR_BGR2GRAY)
       #cv.imshow("pre thresh", frameGray)
       ret, thresh = cv.threshold(frameGray, 100, 255, 0)
       #thresh = cv.erode(thresh, None, iterations=1)
@@ -106,10 +99,9 @@ def grabLoot():
       #cv.drawContours(frame, contours, -1, (0,255,0), 1)
       foundThingToClick = False
       for contour in contours:
-         if cv.contourArea(contour) < 200:
+         if cv.contourArea(contour) < 100:
             continue
 
-         #cv.drawContours(frame, [contour], 0, (0, 50, 200), 2)
          approx = cv.approxPolyDP(contour, 0.01*cv.arcLength(contour, True), True)
          if len(approx) >= 4 and len(approx) <= 50:
             cv.drawContours(frame, [contour], 0, (0, 50, 200), 2)
