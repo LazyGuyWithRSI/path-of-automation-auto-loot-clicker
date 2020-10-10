@@ -32,11 +32,10 @@ Tired of clicking on those endless stacks of currency, vendor items, divination 
    mouse to click on it.
 
    ### Is it safe?
-   - yes. If you are concerned, just read the source.
+   - Yes. If you are concerned, just read the source.
 
    ### Does this violate Path of Exile's Terms of Service?
-   - Only GGG knows. All I know is that marcos are allowed if they result in one action, which is true for this script. So most likely, no it does not violate the terms of service. If anything, it will show if GGG is ever willing to implement an auto-loot feature.
-
+   - Yes. It technically is a form of automation, which is not allowed. Can they detect it? Maybe. This was mostly an academic pursuit.
       ### *I am not responsible if use of this script results in action from GGG*
 
 ---
