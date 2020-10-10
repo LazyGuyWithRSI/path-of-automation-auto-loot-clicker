@@ -60,6 +60,9 @@ def leftClick(sleep=0.005):
    time.sleep(sleep)
 
 def extrapolate(xVals, yVals, lagCompensation = 1.0):
+   if len(xVals) < 2 or len(yVals) < 2:
+      return (0, 0)
+
    slope = (xVals[1] - xVals[0]) * lagCompensation, (yVals[1] - yVals[0]) * lagCompensation
    return slope
 
