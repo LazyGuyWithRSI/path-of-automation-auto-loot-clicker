@@ -6219,7 +6219,7 @@ BaseType == "Rogue's Marker"
 SetFontSize 45
 SetTextColor 0 0 0 255                   # TEXTCOLOR:	 High Special Base
 SetBorderColor 220 0 0 255
-SetBackgroundColor 210 178 135 255       # BACKGROUND:	 Currency T5
+SetBackgroundColor 255 0 239 255         # BACKGROUND:	 Currency T5
 
 #------------------------------------
 #   [4907] Top Currency
@@ -6314,7 +6314,7 @@ BaseType "Deafening Essence of" "Essence of Delirium" "Essence of Horror" "Essen
 SetFontSize 45
 SetTextColor 255 255 255 255             # TEXTCOLOR:	 Cosmetic White
 SetBorderColor 255 255 255 255           # BORDERCOLOR:	 T1 highlight
-SetBackgroundColor 240 90 35 255         # BACKGROUND:	 Currency T2
+SetBackgroundColor 255 0 239 255         # BACKGROUND:	 Currency T2
 DisableDropSound True
 PlayAlertSound 1 300                     # DROPSOUND:	 T1 Dropsound
 PlayEffect Red
@@ -6326,7 +6326,7 @@ BaseType "Remnant of Corruption" "Shrieking Essence of"
 SetFontSize 45
 SetTextColor 0 0 0 255                   # TEXTCOLOR:	 High Special Base
 SetBorderColor 0 0 0 255                 # BORDERCOLOR:	 Neutral T1
-SetBackgroundColor 240 90 35 255         # BACKGROUND:	 Currency T2
+SetBackgroundColor 255 0 239 255         # BACKGROUND:	 Currency T2
 DisableDropSound True
 PlayAlertSound 2 300                     # DROPSOUND:	 Currency Sound
 PlayEffect Yellow
@@ -6338,7 +6338,7 @@ BaseType "Screaming Essence of"
 SetFontSize 45
 SetTextColor 0 0 0 255                   # TEXTCOLOR:	 High Special Base
 SetBorderColor 0 0 0                     # BORDERCOLOR:	 Neutral T1.5
-SetBackgroundColor 213 159 0 255         # BACKGROUND:	 Currency T4
+SetBackgroundColor 255 0 239 255         # BACKGROUND:	 Currency T4
 DisableDropSound True
 PlayAlertSound 2 300                     # DROPSOUND:	 Currency Sound
 PlayEffect White
@@ -6350,7 +6350,7 @@ BaseType "Wailing Essence of"
 SetFontSize 45
 SetTextColor 0 0 0 255                   # TEXTCOLOR:	 High Special Base
 SetBorderColor 0 0 0 200                 # BORDERCOLOR:	 Neutral T2
-SetBackgroundColor 210 178 135 255       # BACKGROUND:	 Currency T5
+SetBackgroundColor 255 0 239 255         # BACKGROUND:	 Currency T5
 
 Show # %H4 %C4 $tier->t5 $type->currency->essences
 Class Currency
@@ -7765,7 +7765,7 @@ Show # %D2
 	SocketGroup RGB
 	SetFontSize 36
 	SetBorderColor 0 0 0                    # BORDERCOLOR:	 Neutral T1.5
-SetBackgroundColor 255 0 239 255
+	SetBackgroundColor 255 0 239 255        # BACKGROUND:	 Recipe T2
 
 Show # %D2
 	Height <= 3
