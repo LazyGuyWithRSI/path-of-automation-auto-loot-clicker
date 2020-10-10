@@ -5,7 +5,7 @@ Tired of clicking on those endless stacks of currency, vendor items, divination 
 
 [Video of the auto-looter in action](https://youtu.be/I2eDgYkn_vU)
 
-No sketchy memory access. It just uses screen caps,then moves and clicks the mouse.
+No sketchy memory access. It just uses screen caps, then moves and clicks the mouse.
 
 ### 
 ---
