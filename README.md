@@ -36,7 +36,7 @@ No sketchy memory access. It just uses screen caps, then moves and clicks the mo
    - Yes. If you are concerned, just read the source.
 
    ### Does this violate Path of Exile's Terms of Service?
-   - Yes. It technically is a form of automation, which is not allowed. Can they detect it? Maybe. This was mostly an academic pursuit.
+   - Yes. It technically is a form of automation, which is not allowed. Will they detect it? If you use the executable, probably. This was mostly an academic pursuit.
       ### *I am not responsible if use of this script results in action from GGG*
 
 ---
